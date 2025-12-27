@@ -1,12 +1,16 @@
+const Booking = ({ params }) => {
+    const { id } = params; // get dynamic route value
 
-import React from 'react'
-
-const Booking = async ({ params }) => {
-    const p = await params
-    console.log(p)
     return (
-        <div>{params}booking</div>
-    )
-}
+        <div className="container mx-auto p-6">
+            <h1 className="text-2xl font-bold">
+                Booking Page
+            </h1>
+            <p className="mt-2 text-lg">
+                Booking for ID: <span className="font-semibold">{id}</span>
+            </p>
+        </div>
+    );
+};
 
-export default Booking
+export default Booking;
