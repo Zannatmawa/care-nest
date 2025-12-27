@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const LoginPage = () => {
     const router = useRouter();
@@ -68,7 +69,15 @@ const LoginPage = () => {
                 <button type="submit" className="btn btn-primary w-full mt-2">
                     Login
                 </button>
+                <Link
+                    href="/register"
+                    className="text-primary hover:underline font-medium"
+                >
+                    New here? Register
+                </Link>
+
             </form>
+
         </div>
     );
 };

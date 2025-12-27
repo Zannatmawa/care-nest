@@ -5,13 +5,14 @@ import Navlink from '../buttons/Navlink'
 import { FiShoppingCart } from 'react-icons/fi'
 
 const Navbar = () => {
-    const nav = <>
+    const nav = <div className="flex items-center space-x-6">
         <Navlink href={"/"}>Home</Navlink>
         <Navlink href={"/services"}>Services</Navlink>
         <Navlink href={"/blog"}>Blog</Navlink>
         <Navlink href={"/contact"}>Contact</Navlink>
-        <Navlink href={"/my-booking-page"}>My Booking page</Navlink>
-    </>
+        <Navlink href={"/my-booking-page"}>My Booking Page</Navlink>
+    </div>
+
     return (
         <div className="navbar bg-base-100 ">
             <div className="navbar-start">
@@ -33,10 +34,10 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link href={"/cart"} className='btn btn-primary space-x-4'>
-                    <FiShoppingCart />
+                <Link href={"/dashboard"} className='btn btn-primary space-x-4 mr-4'>
+                    dashBoard
                 </Link>
-                <Link href={"/login"}><button className='btn btn-primary btn-outline'>Login</button></Link>
+                <Link href="/login"><button className='btn btn-primary btn-outline'>Login</button></Link>
             </div>
         </div>
     )
