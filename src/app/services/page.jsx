@@ -66,10 +66,7 @@ const ServicesPage = () => {
                             </div>
                             <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                             <p className="text-neutral/70 mb-4">{service.description}</p>
-                            <Link
-                                href={`/services/${service.id}`}
-                                className="btn btn-primary btn-sm"
-                            >
+                            <Link href={`/services/${service.id}`} className="btn btn-primary btn-sm">
                                 View Details
                             </Link>
                         </div>
