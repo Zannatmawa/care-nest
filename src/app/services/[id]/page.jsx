@@ -1,4 +1,4 @@
-"use clie"
+// "use client"
 import { use } from "react";
 import Link from "next/link";
 import BookingBtn from "@/components/buttons/BookingBtn";
