@@ -1,4 +1,4 @@
-"use client"; // Client component
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -19,24 +19,21 @@ const LoginPage = () => {
 
         const { email, password } = form;
 
-        // Basic validation
         if (!email || !password) {
             setError("Please enter both email and password.");
             return;
         }
 
-        // TODO: Replace with your API call
         console.log("Logging in:", form);
 
-        // Example: Successful login redirect
         router.push("/booking");
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-base-100">
+        <div className="min-h-screen  flex items-center justify-center">
             <form
                 onSubmit={handleSubmit}
-                className="bg-base-200 p-8 rounded-lg shadow-md w-full max-w-md space-y-4"
+                className="bg-base-200 h-120 p-8 rounded-lg shadow-md w-full max-w-md space-y-4"
             >
                 <h1 className="text-2xl font-bold text-center mb-4">Login</h1>
 
@@ -71,10 +68,18 @@ const LoginPage = () => {
                 </button>
                 <Link
                     href="/register"
-                    className="text-primary hover:underline font-medium"
+
                 >
-                    New here? Register
+                    New here? <span className="text-primary hover:underline font-medium"></span> Register
                 </Link>
+                <Link
+                    href="/register"
+                    className="btn btn-primary w-full  bg-red-600 border-none mt-5"
+                >
+                    Google
+                </Link>
+
+
 
             </form>
 

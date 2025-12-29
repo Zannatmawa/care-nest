@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { registerUser } from "@/actions/registerUser";
 
 const RegistrationPage = () => {
     const router = useRouter();
@@ -49,24 +50,11 @@ const RegistrationPage = () => {
 
         try {
             setLoading(true);
+            await registerUser(userData);
 
-            const res = await fetch("/api/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(userData),
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-                setError(data.error || "Registration failed");
-                return;
-            }
-
-            // ✅ Redirect to booking page with service id
             router.push(`/booking/${serviceId}`);
         } catch (err) {
-            setError("Something went wrong!");
+            setError(err.message || "Registration failed");
         } finally {
             setLoading(false);
         }
@@ -82,62 +70,14 @@ const RegistrationPage = () => {
 
                 {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
-                <input
-                    name="nid"
-                    placeholder="NID No"
-                    className="input input-bordered w-full"
-                    onChange={handleChange}
-                    required
-                />
+                <input name="nid" placeholder="NID No" className="input input-bordered w-full" onChange={handleChange} required />
+                <input name="name" placeholder="Name" className="input input-bordered w-full" onChange={handleChange} required />
+                <input type="email" name="email" placeholder="Email" className="input input-bordered w-full" onChange={handleChange} required />
+                <input name="contact" placeholder="Contact" className="input input-bordered w-full" onChange={handleChange} required />
+                <input type="password" name="password" placeholder="Password" className="input input-bordered w-full" onChange={handleChange} required />
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" className="input input-bordered w-full" onChange={handleChange} required />
 
-                <input
-                    name="name"
-                    placeholder="Name"
-                    className="input input-bordered w-full"
-                    onChange={handleChange}
-                    required
-                />
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="input input-bordered w-full"
-                    onChange={handleChange}
-                    required
-                />
-
-                <input
-                    name="contact"
-                    placeholder="Contact"
-                    className="input input-bordered w-full"
-                    onChange={handleChange}
-                    required
-                />
-
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    className="input input-bordered w-full"
-                    onChange={handleChange}
-                    required
-                />
-
-                <input
-                    type="password"
-                    name="confirmPassword"
-                    placeholder="Confirm Password"
-                    className="input input-bordered w-full"
-                    onChange={handleChange}
-                    required
-                />
-
-                <button
-                    type="submit"
-                    className="btn btn-primary w-full"
-                    disabled={loading}
-                >
+                <button type="submit" className="btn btn-primary w-full" disabled={loading}>
                     {loading ? "Registering..." : "Register"}
                 </button>
             </form>
@@ -146,3 +86,5 @@ const RegistrationPage = () => {
 };
 
 export default RegistrationPage;
+//@Marufa362
+//zannatulmawa38@gmail

@@ -2,7 +2,6 @@
 
 import { saveBooking } from "@/actions/savebooking";
 import { useEffect, useState } from "react";
-// import { saveBooking } from "@/app/actions/saveBooking"; // server action
 
 export default function BookingPage({ params }) {
     const [durationType, setDurationType] = useState("hours");
