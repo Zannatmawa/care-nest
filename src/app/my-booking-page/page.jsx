@@ -9,8 +9,9 @@ const MyBookingPage = () => {
     useEffect(() => {
         async function fetchBookings() {
             try {
-                const data = await getBookings(); // fetch bookings from MongoDB
+                const data = await getBookings();
                 setBookings(data);
+                console.log(data)
             } catch (err) {
                 console.error("Failed to fetch bookings:", err);
             }
@@ -19,6 +20,7 @@ const MyBookingPage = () => {
         fetchBookings();
     }, []);
 
+    console.log(bookings)
     return (
         <div className="overflow-x-auto">
             <table className="table table-zebra w-full">

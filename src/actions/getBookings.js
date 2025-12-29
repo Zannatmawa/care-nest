@@ -6,7 +6,7 @@ import clientPromise from "@/app/lib/dbConnect";
 export async function getBookings() {
     try {
         const client = await clientPromise;
-        const db = client.db("care_nest");
+        const db = client.db("carenestdb");
         const collection = db.collection("bookings");
 
         const bookings = await collection.find({}).toArray();
