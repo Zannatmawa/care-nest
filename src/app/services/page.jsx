@@ -60,7 +60,10 @@ const ServicesPage = () => {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => (
-                        <div key={service.id} className="card bg-base-200 shadow-md p-6 text-center">
+                        <div
+                            key={service.id}
+                            className="card bg-base-200 shadow-md p-6 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                        >
                             <div className="p-4 rounded-full bg-gray-100 mx-auto mb-4 inline-block">
                                 {service.icon}
                             </div>

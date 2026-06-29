@@ -34,7 +34,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link href={"/dashboard"} className='btn btn-primary space-x-4 mr-4'>
+                <Link href={"/dashboard"} className='btn btn-gray space-x-4 mr-4'>
                     dashBoard
                 </Link>
                 <Link href="/login"><button className='btn btn-primary btn-outline'>Login</button></Link>
